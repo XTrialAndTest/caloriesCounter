@@ -1,0 +1,10 @@
+{% extends 'common.html' %} {% load static %} {% block content %}
+<div class="container">
+  <form action="" method="POST">
+    {% csrf_token %} {{form}}
+
+    <button class="btn btn-secondary">Edit</button>
+  </form>
+</div>
+
+{% endblock %}

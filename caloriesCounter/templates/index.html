@@ -1,0 +1,52 @@
+{% extends 'common.html' %} {% load static %} {% block content %}
+<div class="container">
+  <!-- data rendered -->
+  <div
+    class="data"
+    style="
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      width: 40rem;
+      margin: 1rem;
+      gap: 2rem;
+      justify-content: space-between;
+    "
+  >
+    <h1>Number</h1>
+    <h1>Food</h1>
+    <h1>Calories</h1>
+    <h1>Time</h1>
+    <h1>Edit</h1>
+    <h1>Delete</h1>
+
+    {% for i in data%}
+
+    <li style="list-style: none">{{i.id}}</li>
+    <li style="list-style: none">{{i.food}}</li>
+
+    <li style="list-style: none">{{i.calories}}</li>
+
+    <li style="list-style: none">{{i.time}}</li>
+    <a
+      href="{% url 'editCaloriesCounter'  i.id %} "
+      class="btn btn-sm; btn-secondary"
+      >edit</a
+    >
+
+    <a
+      href="{% url 'deleteCaloriesCounter'  i.id %}"
+      class="btn btn-outline-danger"
+      >Delete</a
+    >
+
+    {% endfor %}
+    <a
+      href="{% url 'addCaloriesCounter' %}"
+      class="btn btn-primary btn-sm"
+      style="grid-column: 3/4"
+      >Add</a
+    >
+  </div>
+</div>
+
+{% endblock %}

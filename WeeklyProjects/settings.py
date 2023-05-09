@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
+import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,17 +81,25 @@ WSGI_APPLICATION = 'WeeklyProjects.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'caloriesCounter',
-        'USER': 'root',
-        'PASSWORD': '0000@Mush#123',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'caloriesCounter',
+#         'USER': 'root',
+#         'PASSWORD': '0000@Mush#123',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
+
+# env = environ.Env()
+# environ.Env.read_env()
+DATABASES = {
+    'default': dj_database_url.parse('postgres://calories_counter_user:DWuf3BW7lKUHyZmJKF6TLV1VKN1xmakH@dpg-chd0vu67avjcvo3i1bd0-a.oregon-postgres.render.com/calories_counter')
+
+
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

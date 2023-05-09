@@ -26,7 +26,7 @@
 
   
     {% for i in data%}
-
+    <div class="row col-12 justify-content-between mb-3">
     
     <li style="list-style: none" class="col-2  h4">{{i.food}}</li>
 
@@ -44,14 +44,14 @@
       class="btn btn-outline-danger col-2"
       >Delete</a
     >
-
+</div>
     {% endfor %}
     <div class="row col-12 mt-5 "><a href="{% url 'addCaloriesCounter' %}" class="btn btn-primary col-4"
       >ADD NEW FOOD</a
     >
     <div class=" col-4"></div>
 
-    <div class="btn btn-info col-4 align-self-start ">Total Calories Are: {{total}}</div></div>
+    <div class="btn btn-info col-4 align-self-start ">Total Calories Are: <span class="h4 ml-3">{{total}}</span> </div></div>
     
   </div>
   </div>

@@ -28,11 +28,11 @@
     {% for i in data%}
     <div class="row col-12 justify-content-between mb-3">
     
-    <li style="list-style: none" class="col-2  h4">{{i.food}}</li>
+    <li style="list-style: none" class="col-2  h5">{{i.food}}</li>
 
-    <li style="list-style: none" class="col-2 h4">{{i.calories}}</li>
+    <li style="list-style: none" class="col-2 h5">{{i.calories}}</li>
 
-    <li style="list-style: none" class="col-2 h4">{{i.time}}</li>
+    <li style="list-style: none" class="col-2 h5">{{i.time}}</li>
     <a
       href="{% url 'editCaloriesCounter'  i.id %} "
       class="btn btn-secondary col-2 m-0"

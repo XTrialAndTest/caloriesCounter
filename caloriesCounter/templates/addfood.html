@@ -3,14 +3,14 @@
 <!-- cripsy form -->
 {% load crispy_forms_tags %}
 <div class="container">
-  <form action="" method="POST" class="form p-3 mt-5 row">
+  <form action="" method="POST" class="form p-3 mt-5 row border border-primary">
     {% csrf_token %}
-    <div class="row">
-      <div class="col-4.col-sm-12">{{form.food|as_crispy_field}}</div>
-      <div class="col-4.col-sm-12">{{form.calories|as_crispy_field}}</div>
-    </div>
-    {{form.time|as_crispy_field}}
-    <button class="btn btn-primary btn-lg btn-block">Add</button>
+
+    <div class="col-6 mx-auto">{{form.food|as_crispy_field}}</div>
+    <div class="col-6 mx-auto mb-3">{{form.time|as_crispy_field}}</div>
+    <div class="col-6 mx-auto">{{form.calories|as_crispy_field}}</div>
+    <div class="col-6 mx-auto"></div>
+    <button class="btn btn-primary btn-lg btn-block col-6 mx-auto">Add</button>
   </form>
 </div>
 

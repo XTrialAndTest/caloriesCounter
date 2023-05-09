@@ -6,9 +6,12 @@ from .models import *
 
 
 def index(request):
+    total = 0
     data = CaloriesCounter.objects.all()
+    for i in data:
 
-    return render(request, 'index.html', {'data': data, })
+        total += int(i.calories)
+    return render(request, 'index.html', {'data': data, 'total': total})
 
 
 def addCaloriesCounter(request):

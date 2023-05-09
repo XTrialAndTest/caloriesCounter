@@ -1,6 +1,6 @@
 {% extends 'common.html' %} {% load static %} {% block content %}
 <div class="container w-75">
-  <div class="row justify-content-between">
+  <div class="row">
     <!-- data rendered -->
     <!-- <div
       class="data"
@@ -44,12 +44,13 @@
     >
 
     {% endfor %}
-    <a
-      href="{% url 'addCaloriesCounter' %}"
-      class="btn btn-primary col-4 mx-auto"
-      style="grid-column: 3/4"
+    <a href="{% url 'addCaloriesCounter' %}" class="btn btn-primary col-4"
       >Add</a
     >
+    <div class="btn btn-outline-info col-4 align-self-start">Total Calories Are:</div>
+
+    <div class="btn btn-info col-4 align-self-start">{{total}}</div>
+  </div>
   </div>
 </div>
 
